@@ -24,16 +24,10 @@ def assign_rooms(list)
 end
 
 def printer(attendees)
-  badges = []
-  while attendees.count > 0
-    for name in attendees do
-      badges.push(badge_maker(attendees.shift()))
-    end
+  batch_badge_creator(attendees).each do |value|
+    puts value
   end
-  counter = 0
-  while counter < badges.count
-    puts badges[counter]
-    counter += 1
+  assign_rooms(attendees).each do |value|
+    puts value
   end
 end
-  
